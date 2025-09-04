@@ -204,6 +204,27 @@
 
             bindings = <&to 1 &kp LANG1>;
         };
+
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp LEFT_PARENTHESIS &kp RPAR &kp LEFT>;
+            label = "KAKKO";
+        };
+
+        doublequote: ten {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp DQT &kp DQT &kp LEFT>;
+            label = "TEN";
+        };
+
+        kagikakko: kagikakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_1 &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "KAGIKAKKO";
+        };
     };
 
     macros {
@@ -267,11 +288,11 @@
         CTR_STG_LAYER {
             display-name = "ctr_stg_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DELETE  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kakko        &trans      &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &doublequote  &trans      &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kagikakko    &trans      &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans        &kp DELETE  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans        &trans      &trans  &trans
             >;
         };
 
