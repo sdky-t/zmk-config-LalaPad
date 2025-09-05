@@ -230,17 +230,11 @@
           #binding-cells = <0>;
           tapping-term-ms = <200>;  // ダブルタップ判定時間
     
-          // 単タップ: 'SPACE'
-          bindings-tap = <&kp SPACE>;
-    
-          // 単ホールド: RSHIFT
-          bindings-hold = <&kp RSHIFT>;
-    
-          // ダブルタップ: 'SPACE' を2回送る
-          bindings-double-tap = <&kp SPACE &kp SPACE>;
-    
-          // ダブルホールド: 'SPACE' を押しっぱなし (OSのオートリピートが効く)
-          bindings-double-hold = <&kp SPACE>;
+         // 単タップ: 'SPACE'
+         // 単ホールド: RSHIFT
+         // 単ホールド: RSHIFT
+         // ダブルタップ: 'SPACE' を2回送る
+          bindings = <&kp SPACE>, <&kp RSHIFT>, <&kp SPACE &kp SPACE>, <&kp SPACE>;
         };
 
         mt_kana_to_l1: td_kana {
@@ -262,16 +256,10 @@
           tapping-term-ms = <200>;  // ダブルタップ判定時間
     
           // 単タップ: 'BACKSPACE'
-          bindings-tap = <&kp SPACE>;
-    
           // 単ホールド: レイヤ3
-          bindings-hold = <&mo 3>;
-    
           // ダブルタップ: 'BACKSPACE' を2回送る
-          bindings-double-tap = <&kp BACKSPACE &kp BACKSPACE>;
-    
           // ダブルホールド: 'BACKSPACE' を押しっぱなし (OSのオートリピートが効く)
-          bindings-double-hold = <&kp BACKSPACE>;
+          bindings = <&kp SPACE>, <&mo 3>, <&kp BACKSPACE &kp BACKSPACE>, <&kp BACKSPACE>;
         };
 
         td_enter: td_enter {
@@ -281,16 +269,10 @@
           tapping-term-ms = <200>;  // ダブルタップ判定時間
     
           // 単タップ: 'ENTER'
-          bindings-tap = <&kp ENTER>;
-    
           // 単ホールド: レイヤ2
-          bindings-hold = <&mo 2>;
-    
           // ダブルタップ: 'ENTER' を2回送る
-          bindings-double-tap = <&kp ENTER &kp ENTER>;
-    
           // ダブルホールド: 'ENTER' を押しっぱなし (OSのオートリピートが効く)
-          bindings-double-hold = <&kp ENTER>;
+          bindings = <&kp ENTER>, <&mo 2>, <&kp ENTER &kp ENTER>, <&kp ENTER>;
         };
 
     };
