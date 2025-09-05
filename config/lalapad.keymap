@@ -246,7 +246,7 @@
             quick-tap-ms = <200>;
 
             // タップ: 自作キー、ホールド: 右Ctrl
-            bindings = <&kana_to_l1 &kp RCTRL>;
+            bindings = <&kana_to_l1>, <&kp RCTRL>;
         };
 
         td_backspace: td_backspace {
