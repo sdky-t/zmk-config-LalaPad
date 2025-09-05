@@ -27,7 +27,7 @@
         <&zip_temp_layer MOUSE_R_LAYER 500>;
 
     lowspeedmode {
-        layers = <NUM_FUNC_LAYER>;
+        layers = <BROWSE_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 3 5>,
@@ -39,7 +39,7 @@
         input-processors =
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-            <&zip_scroll_scaler 4 4>;
+            <&zip_scroll_scaler 2 2>;
     };
 };
 
@@ -50,7 +50,7 @@
         <&zip_temp_layer MOUSE_L_LAYER 500>;
 
     lowspeedmode {
-        layers = <NUM_FUNC_LAYER>;
+        layers = <BROWSE_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
             <&zip_xy_scaler 3 4>,
@@ -223,6 +223,76 @@
             bindings = <&kp LANGUAGE_1 &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
             label = "KAGIKAKKO";
         };
+
+        td_space: td_space {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TD_SPACE";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;  // ダブルタップ判定時間
+    
+          // 単タップ: 'SPACE'
+          bindings-tap = <&kp SPACE>;
+    
+          // 単ホールド: RSHIFT
+          bindings-hold = <&kp RSHIFT>;
+    
+          // ダブルタップ: 'SPACE' を2回送る
+          bindings-double-tap = <&kp SPACE &kp SPACE>;
+    
+          // ダブルホールド: 'SPACE' を押しっぱなし (OSのオートリピートが効く)
+          bindings-double-hold = <&kp SPACE>;
+        };
+
+        mt_kana_to_l1: td_kana {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_KANA_TO_L1";
+            #binding-cells = <0>;         // 引数なしで固定化
+            flavor = "tap-preferred";     // タップ優先
+            tapping-term-ms = <200>;      // タップ判定時間
+            quick-tap-ms = <200>;
+
+            // タップ: 自作キー、ホールド: 右Ctrl
+            bindings = <&kana_to_l1>, <&kp RCTRL>;
+        };
+
+        td_backspace: td_backspace {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TD_BACKSPACE";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;  // ダブルタップ判定時間
+    
+          // 単タップ: 'BACKSPACE'
+          bindings-tap = <&kp SPACE>;
+    
+          // 単ホールド: レイヤ3
+          bindings-hold = <&mo 3>;
+    
+          // ダブルタップ: 'BACKSPACE' を2回送る
+          bindings-double-tap = <&kp BACKSPACE &kp BACKSPACE>;
+    
+          // ダブルホールド: 'BACKSPACE' を押しっぱなし (OSのオートリピートが効く)
+          bindings-double-hold = <&kp BACKSPACE>;
+        };
+
+        td_enter: td_enter {
+          compatible = "zmk,behavior-tap-dance";
+          label = "TD_ENTER";
+          #binding-cells = <0>;
+          tapping-term-ms = <200>;  // ダブルタップ判定時間
+    
+          // 単タップ: 'ENTER'
+          bindings-tap = <&kp ENTER>;
+    
+          // 単ホールド: レイヤ2
+          bindings-hold = <&mo 2>;
+    
+          // ダブルタップ: 'ENTER' を2回送る
+          bindings-double-tap = <&kp ENTER &kp ENTER>;
+    
+          // ダブルホールド: 'ENTER' を押しっぱなし (OSのオートリピートが効く)
+          bindings-double-hold = <&kp ENTER>;
+        };
+
     };
 
     macros {
