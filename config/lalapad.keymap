@@ -1,8 +1,6 @@
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT_LAYER   0
@@ -285,14 +283,14 @@
             >;
         };
 
-        CTR_STG_LAYER {
+        CTR_OFFICE_LAYER {
             display-name = "ctr_stg_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &kakko        &trans      &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &doublequote  &trans      &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kagikakko    &trans      &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans        &kp DELETE  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans        &trans      &trans  &trans
+&trans      &trans  &trans  &trans  &trans  &trans  &trans     &kp HOME    &kp UP        &kp END    &trans  &trans
+&trans      &trans  &trans  &trans  &trans  &trans  &kp LC(Z)  &kp LEFT    &kp DOWN      &kp RIGHT  &trans  &trans
+&trans      &trans  &trans  &trans  &trans  &trans  &kp LC(Y)  &kp LC(C)   &kp LC(X)     &kp LC(V)  &trans  &trans
+&sys_reset  &trans  &trans  &trans  &trans  &trans  &trans     &kp DELETE  &kp LEFT_GUI  &trans     &trans  &sys_reset
+                    &trans  &trans  &trans  &trans  &trans     &trans      &trans        &trans
             >;
         };
 
@@ -301,22 +299,22 @@
             sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans       &trans      &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &bootloader  &sys_reset  &sys_reset    &bootloader   &studio_unlock  &bt BT_CLR    &bt BT_CLR_ALL  &trans
-&trans  &trans  &trans  &trans  &trans       &trans      &trans        &trans        &trans          &trans        &trans          &trans
-&trans  &trans  &trans  &trans  &trans       &trans      &trans        &trans        &trans          &trans        &trans          &trans
-                &trans  &trans  &trans       &trans      &trans        &trans        &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp LC(T)      &kp F15          &kp F16            &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp LC(W)      &kp LS(LC(TAB))  &kp LC(TAB)        &kp F5  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp LS(LC(T))  &kp LA(LEFT)     &kp LA(RIGHT)      &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans         &kp LG(TAB)      &kp LC(LG(RIGHT))  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans         &trans           &trans             &trans
             >;
         };
 
         MOUSE_R_LAYER {
             display-name = "mouse_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp MCLK  &mkp RCLK  &mo SCROLL_R_LAYER
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4   &mkp MB5   &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans     &trans
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &mo 7     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &mkp MB4   &mkp MB5  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans     &trans     &trans
             >;
         };
 
