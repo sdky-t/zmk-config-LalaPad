@@ -234,7 +234,7 @@
          // 単ホールド: RSHIFT
          // 単ホールド: RSHIFT
          // ダブルタップ: 'SPACE' を2回送る
-          bindings = <&kp SPACE>, <&kp RSHIFT>, <&kp SPACE &kp SPACE>, <&kp SPACE>;
+          bindings = <&kp SPACE &kp RSHIFT &kp SPACE &kp SPACE>;
         };
 
         mt_kana_to_l1: td_kana {
@@ -246,7 +246,7 @@
             quick-tap-ms = <200>;
 
             // タップ: 自作キー、ホールド: 右Ctrl
-            bindings = <&kana_to_l1>, <&kp RCTRL>;
+            bindings = <&kana_to_l1 &kp RCTRL>;
         };
 
         td_backspace: td_backspace {
@@ -259,7 +259,7 @@
           // 単ホールド: レイヤ3
           // ダブルタップ: 'BACKSPACE' を2回送る
           // ダブルホールド: 'BACKSPACE' を押しっぱなし (OSのオートリピートが効く)
-          bindings = <&kp SPACE>, <&mo 3>, <&kp BACKSPACE &kp BACKSPACE>, <&kp BACKSPACE>;
+          bindings = <&kp BACKSPACE &mo 3 &kp BACKSPACE &kp BACKSPACE>;
         };
 
         td_enter: td_enter {
@@ -272,7 +272,7 @@
           // 単ホールド: レイヤ2
           // ダブルタップ: 'ENTER' を2回送る
           // ダブルホールド: 'ENTER' を押しっぱなし (OSのオートリピートが効く)
-          bindings = <&kp ENTER>, <&mo 2>, <&kp ENTER &kp ENTER>, <&kp ENTER>;
+          bindings = <&kp ENTER &mo 2 &kp ENTER &kp ENTER>;
         };
 
     };
