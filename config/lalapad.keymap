@@ -237,16 +237,14 @@
           bindings = <&kp SPACE &kp RSHIFT &kp SPACE &kp SPACE>;
         };
 
-        mt_kana_to_l1: mt_kana_to_l1 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_KANA_TO_L1";
-            #binding-cells = <0>;         // 引数なしで固定化
-            flavor = "tap-preferred";     // タップ優先
-            tapping-term-ms = <200>;      // タップ判定時間
-            quick-tap-ms = <200>;
+        td_kana_to_l1: td_kana_to_l1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_KANA_TO_L1";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;  // ダブルタップ判定時間
 
             // タップ: 自作キー、ホールド: 右Ctrl
-            bindings = <&kana_to_l1 &press_rctrl>;
+            bindings = <&kana_to_l1 &kp RCTRL>;
         };
 
         td_backspace: td_backspace {
