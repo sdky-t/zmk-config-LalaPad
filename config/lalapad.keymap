@@ -286,11 +286,11 @@
         CTR_OFFICE_LAYER {
             display-name = "ctr_stg_layer";
             bindings = <
-&trans      &trans  &trans  &trans  &trans  &trans  &trans     &kp HOME    &kp UP        &kp END    &trans  &trans
-&trans      &trans  &trans  &trans  &trans  &trans  &kp LC(Z)  &kp LEFT    &kp DOWN      &kp RIGHT  &trans  &trans
-&trans      &trans  &trans  &trans  &trans  &trans  &kp LC(Y)  &kp LC(C)   &kp LC(X)     &kp LC(V)  &trans  &trans
-&sys_reset  &trans  &trans  &trans  &trans  &trans  &trans     &kp DELETE  &kp LEFT_GUI  &trans     &trans  &sys_reset
-                    &trans  &trans  &trans  &trans  &trans     &trans      &trans        &trans
+&trans      &trans       &trans  &trans  &trans  &trans  &trans     &kp HOME    &kp UP        &kp END    &trans       &trans
+&trans      &trans       &trans  &trans  &trans  &trans  &kp LC(Z)  &kp LEFT    &kp DOWN      &kp RIGHT  &trans       &trans
+&trans      &trans       &trans  &trans  &trans  &trans  &kp LC(Y)  &kp LC(C)   &kp LC(X)     &kp LC(V)  &trans       &trans
+&sys_reset  &bootloader  &trans  &trans  &trans  &trans  &trans     &kp DELETE  &kp LEFT_GUI  &trans     &bootloader  &sys_reset
+                         &trans  &trans  &trans  &trans  &trans     &trans      &trans        &trans
             >;
         };
 
