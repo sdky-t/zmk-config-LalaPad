@@ -237,7 +237,7 @@
           bindings = <&kp SPACE &kp RSHIFT &kp SPACE &kp SPACE>;
         };
 
-        mt_kana_to_l1: td_kana {
+        mt_kana_to_l1: mt_kana_to_l1 {
             compatible = "zmk,behavior-hold-tap";
             label = "MT_KANA_TO_L1";
             #binding-cells = <0>;         // 引数なしで固定化
@@ -246,7 +246,7 @@
             quick-tap-ms = <200>;
 
             // タップ: 自作キー、ホールド: 右Ctrl
-            bindings = <&KANA_TO_L1 &kp RCTRL>;
+            bindings = <&kana_to_l1 &kp RCTRL>;
         };
 
         td_backspace: td_backspace {
