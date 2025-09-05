@@ -264,7 +264,7 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp TILDE  &kp F9  &kp F10  &kp F11  &kp F12  &kp F19          &trans          &kp N7  &kp N8  &kp N9  &kp PLUS      &kp MINUS
+&kp TILDE  &kp F9  &kp F10  &kp F11  &kp F12  &kp F19          &kp PERCENT     &kp N7  &kp N8  &kp N9  &kp PLUS      &kp MINUS
 &trans     &kp F5  &kp F6   &kp F7   &kp F8   &kp LG(V)        &kp PERIOD      &kp N4  &kp N5  &kp N6  &kp N0        &kp EQUAL
 &trans     &kp F1  &kp F2   &kp F3   &kp F4   &kp PRINTSCREEN  &kp LANGUAGE_2  &kp N1  &kp N2  &kp N3  &kp ASTERISK  &kp SLASH
 &trans     &trans  &trans   &trans   &trans   &trans           &trans          &trans  &trans  &trans  &trans        &trans
@@ -274,14 +274,14 @@
 
         SYMBOL_LAYER {
             display-name = "symbol_layer";
-            sensor-bindings = <&volume_up_down>, <&volume_up_down>;
+            sensor-bindings = <&scroll_right_left>, <&volume_up_down>;
 
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp LBKT          &kp RBKT           &kakko        &kp AMPS  &kp DOLLAR  &kp CARET  &trans     &trans
+&trans  &trans  &trans  &trans  &kp SEMI          &kp COLON          &doublequote  &kp AT    &kp HASH    &kp CARET  &kp UNDER  &trans
+&trans  &trans  &trans  &trans  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kagikakko    &kp EXCL  &kp QMARK   &kp TILDE  &kp MINUS  &trans
+&trans  &trans  &trans  &trans  &trans            &trans             &trans        &trans    &trans      &trans     &trans     &trans
+                &trans  &trans  &trans            &trans             &trans        &trans    &trans      &trans
             >;
         };
 
