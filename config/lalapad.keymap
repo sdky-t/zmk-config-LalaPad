@@ -225,16 +225,16 @@
         };
 
         td_space: td_space {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TD_SPACE";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;  // ダブルタップ判定時間
-    
-         // 単タップ: 'SPACE'
-         // 単ホールド: RSHIFT
-         // 単ホールド: RSHIFT
-         // ダブルタップ: 'SPACE' を2回送る
-          bindings = <&kp SPACE &kp RSHIFT &kp SPACE &kp SPACE>;
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SPACE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;  // ダブルタップ判定時間
+            // 単タップ: 'SPACE'
+            // 単ホールド: RSHIFT
+            // 単ホールド: RSHIFT
+            // ダブルタップ: 'SPACE' を2回送る
+
+            bindings = <&kp SPACE &kp RSHIFT &kp SPACE &kp SPACE>;
         };
 
         td_kana_to_l1: td_kana_to_l1 {
@@ -242,37 +242,36 @@
             label = "TD_KANA_TO_L1";
             #binding-cells = <0>;
             tapping-term-ms = <200>;  // ダブルタップ判定時間
-
             // タップ: 自作キー、ホールド: 右Ctrl
+
             bindings = <&kana_to_l1 &kp RCTRL>;
         };
 
         td_backspace: td_backspace {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TD_BACKSPACE";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;  // ダブルタップ判定時間
-    
-          // 単タップ: 'BACKSPACE'
-          // 単ホールド: レイヤ3
-          // ダブルタップ: 'BACKSPACE' を2回送る
-          // ダブルホールド: 'BACKSPACE' を押しっぱなし (OSのオートリピートが効く)
-          bindings = <&kp BACKSPACE &mo 3 &kp BACKSPACE &kp BACKSPACE>;
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BACKSPACE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;  // ダブルタップ判定時間
+            // 単タップ: 'BACKSPACE'
+            // 単ホールド: レイヤ3
+            // ダブルタップ: 'BACKSPACE' を2回送る
+            // ダブルホールド: 'BACKSPACE' を押しっぱなし (OSのオートリピートが効く)
+
+            bindings = <&kp BACKSPACE &mo 3 &kp BACKSPACE &kp BACKSPACE>;
         };
 
         td_enter: td_enter {
-          compatible = "zmk,behavior-tap-dance";
-          label = "TD_ENTER";
-          #binding-cells = <0>;
-          tapping-term-ms = <200>;  // ダブルタップ判定時間
-    
-          // 単タップ: 'ENTER'
-          // 単ホールド: レイヤ2
-          // ダブルタップ: 'ENTER' を2回送る
-          // ダブルホールド: 'ENTER' を押しっぱなし (OSのオートリピートが効く)
-          bindings = <&kp ENTER &mo 2 &kp ENTER &kp ENTER>;
-        };
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ENTER";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;  // ダブルタップ判定時間
+            // 単タップ: 'ENTER'
+            // 単ホールド: レイヤ2
+            // ダブルタップ: 'ENTER' を2回送る
+            // ダブルホールド: 'ENTER' を押しっぱなし (OSのオートリピートが効く)
 
+            bindings = <&kp ENTER &mo 2 &kp ENTER &kp ENTER>;
+        };
     };
 
     macros {
@@ -286,11 +285,11 @@
             sensor-bindings = <&scroll_right_left>, <&scroll_up_down>;
 
             bindings = <
-&kp ESC    &kp Q         &kp W         &kp E                  &kp R         &kp T          &kp Y          &kp U            &kp I            &kp O               &kp P           &kp LANG1
-&kp TAB    &kp A         &kp S         &kp D                  &lt 4 F       &kp G          &kp H          &kp J            &kp K            &kp L               &lt 5 MINUS     &mt RCTRL EQUAL
-&kp LSHFT  &kp Z         &kp X         &kp C                  &kp V         &kp B          &kp N          &kp M            &kp COMMA        &kp PERIOD          &lt 4 SLASH     &mt2 UP BSLH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt RIGHT_SHIFT SPACE  &mt RCTRL AT  &eisu_to_l0    &kana_to_l1    &lt 3 BACKSPACE  &lt 2 ENTER      &mt RIGHT_ALT LEFT  &mt RCTRL DOWN  &mt RIGHT_SHIFT RIGHT
-                         &allow_end    &allow_pagedown        &allow_home   &allow_pageup  &allow_pageup  &allow_home      &allow_pagedown  &allow_end
+&kp ESC    &kp Q         &kp W         &kp E            &kp R           &kp T          &kp Y          &kp U          &kp I            &kp O               &kp P           &kp LANG1
+&kp TAB    &kp A         &kp S         &kp D            &lt 4 F         &kp G          &kp H          &kp J          &kp K            &kp L               &lt 5 MINUS     &mt RCTRL EQUAL
+&kp LSHFT  &kp Z         &kp X         &kp C            &kp V           &kp B          &kp N          &kp M          &kp COMMA        &kp PERIOD          &lt 4 SLASH     &mt2 UP BSLH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &td_space        &td_kana_to_l1  &eisu_to_l0    &kana_to_l1    &td_backspace  &td_enter        &mt RIGHT_ALT LEFT  &mt RCTRL DOWN  &mt RIGHT_SHIFT RIGHT
+                         &allow_end    &allow_pagedown  &allow_home     &allow_pageup  &allow_pageup  &allow_home    &allow_pagedown  &allow_end
             >;
         };
 
