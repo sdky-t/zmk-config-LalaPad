@@ -231,20 +231,21 @@
             tapping-term-ms = <140>;  // ダブルタップ判定時間
             // 単タップ: 'SPACE'
             // 単ホールド: RSHIFT
-            // ダブルホールド: RSHIFT
-            // ダブルタップ: 'SPACE' を2回送る←無効none
+            // ダブルタップ: 'SPACE'
 
-            bindings = <&kp SPACE &none &kp RSHIFT &kp SPACE>;
+            bindings = <&mt RSHIFT SPACE>, <&kp SPACE>;
         };
 
-        td_kana_to_l1: td_kana_to_l1 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_KANA_TO_L1";
-            #binding-cells = <0>;
-            tapping-term-ms = <140>;  // ダブルタップ判定時間
-            // タップ: 自作キー、ホールド: 右Ctrl
-
-            bindings = <&kana_to_l1 &none &kp RCTRL>;
+        kanaL1_rctrl: kanaL1_rctrl {
+          compatible = "zmk,behavior-hold-tap";
+          label = "KANAL1_RCTRL";
+          #binding-cells = <0>;
+          flavor = "tap-preferred";      // タップ優先（好みで変更可）
+          tapping-term-ms = <100>;       // タップ判定時間
+    
+          // ここがポイント：タップ側に“自作キー”を置ける
+          // bindings = <TAP>, <HOLD>
+          bindings = <&kana_to_l1>, <&kp RCTRL>;
         };
 
         td_backspace: td_backspace {
@@ -254,10 +255,8 @@
             tapping-term-ms = <150>;  // ダブルタップ判定時間
             // 単タップ: 'BACKSPACE'
             // 単ホールド: レイヤ3
-            // ダブルタップ: 'BACKSPACE' を2回送る←無効none
-            // ダブルホールド: 'BACKSPACE' を押しっぱなし (OSのオートリピートが効く)
-
-            bindings = <&kp BACKSPACE &none &mo 3 &kp BACKSPACE>;
+            // ダブルタップ: 'BACKSPACE'
+            bindings = <&lt 3 BACKSPACE>, <&kp BACKSPACE>;
         };
 
         td_enter: td_enter {
@@ -267,10 +266,8 @@
             tapping-term-ms = <160>;  // ダブルタップ判定時間
             // 単タップ: 'ENTER'
             // 単ホールド: レイヤ2
-            // ダブルタップ: 'ENTER' を2回送る←無効none
-            // ダブルホールド: 'ENTER' を押しっぱなし (OSのオートリピートが効く)
-
-            bindings = <&kp ENTER &none &mo 2 &kp ENTER>;
+            // ダブルタップ: 'ENTER' を2回送る
+            bindings = <&lt 2 ENTER>, <&kp ENTER>;
         };
         // 例：カスタム hold で LANG2 を一発送ってからレイヤをモーメンタリ
         mo_eisu_2: mo_eisu_2 {
