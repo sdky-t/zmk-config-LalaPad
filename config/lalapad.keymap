@@ -179,7 +179,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-
         // 半角（LANG2）に“する”＋ Layer 0 に固定切替
 
         eisu_to_l0: eisu_to_l0 {
@@ -245,6 +244,7 @@
             // 単タップ: 'BACKSPACE'
             // 単ホールド: レイヤ3
             // ダブルタップ: 'BACKSPACE'
+
             bindings = <&lt 3 BACKSPACE>, <&kp BACKSPACE>;
         };
 
@@ -256,9 +256,12 @@
             // 単タップ: 'ENTER'
             // 単ホールド: レイヤ2
             // ダブルタップ: 'ENTER' を2回送る
+
             bindings = <&lt 2 ENTER>, <&kp ENTER>;
         };
+
         // 例：カスタム hold で LANG2 を一発送ってからレイヤをモーメンタリ
+
         mo_eisu_2: mo_eisu_2 {
             compatible = "yourorg,behavior-mo-with-prime";
             #binding-cells = <0>;
@@ -278,11 +281,11 @@
             sensor-bindings = <&scroll_right_left>, <&scroll_up_down>;
 
             bindings = <
-&kp ESC    &kp Q         &kp W         &kp E            &kp R           &kp T          &kp Y          &kp U          &kp I            &kp O               &kp P           &kp LANG1
-&kp TAB    &kp A         &kp S         &kp D            &lt 4 F         &kp G          &kp H          &kp J          &kp K            &kp L               &lt 5 MINUS     &mt RCTRL EQUAL
-&kp LSHFT  &kp Z         &kp X         &kp C            &kp V           &kp B          &kp N          &kp M          &kp COMMA        &kp PERIOD          &lt 4 SLASH     &mt2 UP BSLH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &td_space        &kana_to_l1   &eisu_to_l0    &kana_to_l1    &td_backspace  &td_enter        &mt RIGHT_ALT LEFT  &mt RCTRL DOWN  &mt RIGHT_SHIFT RIGHT
-                         &allow_end    &allow_pagedown  &allow_home     &allow_pageup  &allow_pageup  &allow_home    &allow_pagedown  &allow_end
+&kp ESC    &kp Q         &kp W         &kp E            &kp R            &kp T          &kp Y          &kp U          &kp I            &kp O               &kp P           &kp LANG1
+&kp TAB    &kp A         &kp S         &kp D            &lt 4 F          &kp G          &kp H          &kp J          &kp K            &kp L               &lt 5 MINUS     &mt RCTRL EQUAL
+&kp LSHFT  &kp Z         &kp X         &kp C            &kp V            &kp B          &kp N          &kp M          &kp COMMA        &kp PERIOD          &lt 4 SLASH     &mt2 UP BSLH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &td_space        &mt RCTRL SPACE  &eisu_to_l0    &kana_to_l1    &td_backspace  &td_enter        &mt RIGHT_ALT LEFT  &mt RCTRL DOWN  &mt RIGHT_SHIFT RIGHT
+                         &allow_end    &allow_pagedown  &allow_home      &allow_pageup  &allow_pageup  &allow_home    &allow_pagedown  &allow_end
             >;
         };
 
