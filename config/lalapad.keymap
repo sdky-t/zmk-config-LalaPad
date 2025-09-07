@@ -228,7 +228,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <140>;  // ダブルタップ判定時間
+            tapping-term-ms = <150>;  // ダブルタップ判定時間
             // 単タップ: 'SPACE'
             // 単ホールド: RSHIFT
             // ダブルタップ: 'SPACE'
@@ -252,7 +252,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ENTER";
             #binding-cells = <0>;
-            tapping-term-ms = <160>;  // ダブルタップ判定時間
+            tapping-term-ms = <150>;  // ダブルタップ判定時間
             // 単タップ: 'ENTER'
             // 単ホールド: レイヤ2
             // ダブルタップ: 'ENTER' を2回送る
