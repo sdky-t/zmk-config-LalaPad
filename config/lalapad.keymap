@@ -245,7 +245,7 @@
     
           // ここがポイント：タップ側に“自作キー”を置ける
           // bindings = <TAP>, <HOLD>
-          bindings = <&kp RCTRL &kana_to_l1>;
+          bindings = <&kp RCTRL>,  <&kana_to_l1>;
         };
 
         td_backspace: td_backspace {
