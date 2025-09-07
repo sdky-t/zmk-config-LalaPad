@@ -228,49 +228,49 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;  // ダブルタップ判定時間
+            tapping-term-ms = <140>;  // ダブルタップ判定時間
             // 単タップ: 'SPACE'
             // 単ホールド: RSHIFT
-            // 単ホールド: RSHIFT
-            // ダブルタップ: 'SPACE' を2回送る
+            // ダブルホールド: RSHIFT
+            // ダブルタップ: 'SPACE' を2回送る←無効none
 
-            bindings = <&kp SPACE &kp SPACE &kp RSHIFT &kp SPACE>;
+            bindings = <&kp SPACE &none &kp RSHIFT &kp SPACE>;
         };
 
         td_kana_to_l1: td_kana_to_l1 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_KANA_TO_L1";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;  // ダブルタップ判定時間
+            tapping-term-ms = <140>;  // ダブルタップ判定時間
             // タップ: 自作キー、ホールド: 右Ctrl
 
-            bindings = <&kana_to_l1 &kana_to_l1 &kp RCTRL>;
+            bindings = <&kana_to_l1 &none &kp RCTRL>;
         };
 
         td_backspace: td_backspace {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_BACKSPACE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;  // ダブルタップ判定時間
+            tapping-term-ms = <150>;  // ダブルタップ判定時間
             // 単タップ: 'BACKSPACE'
             // 単ホールド: レイヤ3
-            // ダブルタップ: 'BACKSPACE' を2回送る
+            // ダブルタップ: 'BACKSPACE' を2回送る←無効none
             // ダブルホールド: 'BACKSPACE' を押しっぱなし (OSのオートリピートが効く)
 
-            bindings = <&kp BACKSPACE &kp BACKSPACE &mo 3 &kp BACKSPACE>;
+            bindings = <&kp BACKSPACE &none &mo 3 &kp BACKSPACE>;
         };
 
         td_enter: td_enter {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ENTER";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;  // ダブルタップ判定時間
+            tapping-term-ms = <160>;  // ダブルタップ判定時間
             // 単タップ: 'ENTER'
             // 単ホールド: レイヤ2
-            // ダブルタップ: 'ENTER' を2回送る
+            // ダブルタップ: 'ENTER' を2回送る←無効none
             // ダブルホールド: 'ENTER' を押しっぱなし (OSのオートリピートが効く)
 
-            bindings = <&kp ENTER &kp ENTER &mo 2 &kp ENTER>;
+            bindings = <&kp ENTER &none &mo 2 &kp ENTER>;
         };
         // 例：カスタム hold で LANG2 を一発送ってからレイヤをモーメンタリ
         mo_eisu_2: mo_eisu_2 {
