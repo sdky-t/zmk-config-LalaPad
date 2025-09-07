@@ -239,7 +239,7 @@
         kanaL1_rctrl: kanaL1_rctrl {
           compatible = "zmk,behavior-hold-tap";
           label = "KANAL1_RCTRL";
-          #binding-cells = <0>;
+          #binding-cells = <2>;          //#binding-cells = <2> が必須、ダミー引数2つで0 0とか適当にいれる必要あり
           flavor = "tap-preferred";      // タップ優先（好みで変更可）
           tapping-term-ms = <100>;       // タップ判定時間
     
