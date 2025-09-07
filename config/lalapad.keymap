@@ -181,10 +181,10 @@
 
         mt3: mod_tap3 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&any>, <&any>;
+            bindings = <&kp>, <&kana_to_l1>;
         };
 
         // 半角（LANG2）に“する”＋ Layer 0 に固定切替
