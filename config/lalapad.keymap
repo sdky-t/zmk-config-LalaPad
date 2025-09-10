@@ -23,9 +23,6 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        <&zip_xy_deadzone 2 2>,
-        <&zip_xy_quantize 2 2>,
-        <&zip_xy_suppress_repeat 4>,
         <&zip_xy_scaler 9 4>,
         <&zip_temp_layer MOUSE_R_LAYER 500>;
 
@@ -33,9 +30,6 @@
         layers = <BROWSE_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            <&zip_xy_deadzone 2 2>,
-            <&zip_xy_quantize 2 2>,
-            <&zip_xy_suppress_repeat 4>,
             <&zip_xy_scaler 11 2>,
             <&zip_temp_layer MOUSE_R_LAYER 500>;
     };
@@ -45,9 +39,6 @@
         input-processors =
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-            <&zip_xy_deadzone 2 2>,
-            <&zip_xy_quantize 2 2>,
-            <&zip_xy_suppress_repeat 4>,
             <&zip_scroll_scaler 1 6>;
     };
 };
