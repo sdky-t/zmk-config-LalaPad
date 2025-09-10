@@ -278,7 +278,7 @@
 
         DEFAULT_LAYER {
             display-name = "Default";
-            sensor-bindings = <&scroll_right_left>, <&scroll_up_down>;
+            sensor-bindings = <&scroll_left_right>, <&scroll_up_down>;
 
             bindings = <
 &kp ESC    &kp Q         &kp W         &kp E            &kp R            &kp T          &kp Y          &kp U          &kp I            &kp O               &kp P           &kp LANG1
@@ -291,7 +291,7 @@
 
         OHNISHI_LAYER {
             display-name = "Ohnishi";
-            sensor-bindings = <&scroll_right_left>, <&scroll_up_down>;
+            sensor-bindings = <&scroll_left_right>, <&scroll_up_down>;
 
             bindings = <
 &trans  &kp Q   &kp L       &kp U            &kp COMMA    &kp PERIOD     &kp F          &kp W        &kp R            &kp Y       &kp P    &trans
@@ -341,7 +341,7 @@
 
         BROWSE_LAYER {
             display-name = "browse_layer";
-            sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
+            sensor-bindings = <&volume_up_down>, <&volume_up_down>;
 
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &kp LC(T)      &kp F15          &kp F16            &trans  &trans  &trans
