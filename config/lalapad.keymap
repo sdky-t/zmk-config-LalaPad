@@ -262,12 +262,12 @@
 
         // 例：カスタム hold で LANG2 を一発送ってからレイヤをモーメンタリ
 
-        mo_eisu_2: mo_eisu_2 {
-            compatible = "yourorg,behavior-mo-with-prime";
-            #binding-cells = <0>;
-            layer = <2>;              // 有効化するレイヤ番号
-            prime-binding = <&kp LANG2>;  // ホールド開始時に一度だけ送るキー
-        };
+        #mo_eisu_2: mo_eisu_2 {
+        #    compatible = "yourorg,behavior-mo-with-prime";
+        #    #binding-cells = <0>;
+        #    layer = <2>;              // 有効化するレイヤ番号
+        #    prime-binding = <&kp LANG2>;  // ホールド開始時に一度だけ送るキー
+        #};
     };
 
     macros {
