@@ -41,7 +41,7 @@
         input-processors =
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-            // XではなくYを反転,,,
+            // XではなくYを反転,,,,
             <&zip_scroll_scaler 1 8>;
     };
 };
@@ -297,8 +297,8 @@
 
             bindings = <
 &trans  &kp Q   &kp L       &kp U            &kp COMMA    &kp PERIOD     &kp F          &kp W        &kp R            &kp Y       &kp P    &trans
-&trans  &kp E   &kp I       &kp A            &lt 4 O      &kp MINUS      &kp K          &kp T        &kp N            &lt 7 S     &lt 5 H  &trans
-&trans  &kp Z   &kp X       &kp C            &kp V        &kp SLASH      &kp G          &kp D        &kp M            &kp J       &lt 4 B  &trans
+&trans  &kp E   &kp I       &kp A            &lt 4 O      &kp MINUS      &kp K          &kp T        &kp N            &lt 6 S     &lt 5 H  &trans
+&trans  &kp Z   &kp X       &kp C            &kp V        &kp SLASH      &kp G          &kp D        &kp M            &lt 7 J     &lt 4 B  &trans
 &trans  &trans  &trans      &trans           &trans       &trans         &trans         &trans       &trans           &trans      &trans   &trans
                 &allow_end  &allow_pagedown  &allow_home  &allow_pageup  &allow_pageup  &allow_home  &allow_pagedown  &allow_end
             >;
