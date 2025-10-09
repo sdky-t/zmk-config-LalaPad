@@ -41,7 +41,7 @@
         input-processors =
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-            // XではなくYを反転,,,,
+            // XではなくYを反転,,,,,
             <&zip_scroll_scaler 1 8>;
     };
 };
@@ -333,7 +333,7 @@
         CTR_OFFICE_LAYER {
             display-name = "ctr_stg_layer";
             bindings = <
-&trans      &kp RA(Q)    &kp RA(W)  &kp RA(E)  &trans  &trans  &trans     &kp HOME    &kp UP        &kp END    &bt BT_SEL 0 &bt BT_SEL 1
+&trans      &kp RA(Q)    &kp RA(W)  &kp RA(E)  &trans  &trans  &trans     &kp HOME    &kp UP        &kp END    &trans       &trans
 &trans      &kp RA(A)    &kp RA(S)  &kp RA(D)  &trans  &trans  &kp LC(Z)  &kp LEFT    &kp DOWN      &kp RIGHT  &trans       &trans
 &trans      &kp RA(Z)    &kp RA(X)  &kp RA(C)  &trans  &trans  &kp LC(Y)  &kp LC(C)   &kp LC(X)     &kp LC(V)  &trans       &trans
 &sys_reset  &bootloader  &trans     &trans     &trans  &trans  &trans     &kp DELETE  &kp LEFT_GUI  &trans     &bootloader  &sys_reset
