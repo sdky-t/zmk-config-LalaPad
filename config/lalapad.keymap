@@ -42,7 +42,7 @@
         input-processors =
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
-            // XではなくYを反転,,,,,,,,
+            // XではなくYを反転,,,,,,,,,
             <&zip_scroll_scaler 1 8>;
     };
 };
@@ -264,6 +264,45 @@
             bindings = <&lt 2 ENTER>, <&kp ENTER>;
         };
 
+        mt_L0EN: mt_L0EN {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_L0EN";
+            bindings = <&kp>, <&eisu_to_l0>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+        };
+
+        mt_L1JP: mt_L1JP {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_L1JP";
+            bindings = <&kp>, <&kana_to_l1>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        mt_qs_on: mt_qs_on {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_QS_ON";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
+
+        lt_qs_on: lt_qs_on {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_QS_ON";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
+
         // 例：カスタム hold で LANG2 を一発送ってからレイヤをモーメンタリ
         //mo_eisu_2: mo_eisu_2 {
         //    compatible = "yourorg,behavior-mo-with-prime";
@@ -284,11 +323,11 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_up_down>;
 
             bindings = <
-&kp ESC    &kp Q         &kp W         &kp E            &kp R                 &kp T          &kp Y          &kp U          &kp I            &kp O               &kp P            &mkp RCLK
-&kp TAB    &kp A         &kp S         &kp D            &lt 4 F               &kp G          &kp H          &kp J          &kp K            &lt 6 L             &lt 5 MINUS      &mt RCTRL EQUAL
-&kp LSHFT  &kp Z         &kp X         &kp C            &kp V                 &kp B          &kp N          &kp M          &kp COMMA        &lt 7 DOT           &lt 4 SLASH      &kp BSLH
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &td_space        &mt RCTRL LANGUAGE_1  &eisu_to_l0    &kana_to_l1    &td_backspace  &td_enter        &mt RIGHT_ALT LEFT  &mt RCTRL RIGHT  &mt RIGHT_SHIFT LANG1
-                         &allow_end    &allow_pagedown  &allow_home           &allow_pageup  &allow_pageup  &allow_home    &allow_pagedown  &allow_end
+&kp ESC    &kp Q         &kp W         &kp E                        &kp R             &kp T          &kp Y          &kp U                  &kp I              &kp O               &kp P            &mkp RCLK
+&kp TAB    &kp A         &kp S         &kp D                        &lt 4 F           &kp G          &kp H          &kp J                  &kp K              &lt 6 L             &lt 5 MINUS      &mt RCTRL EQUAL
+&kp LSHFT  &kp Z         &kp X         &kp C                        &kp V             &kp B          &kp N          &kp M                  &kp COMMA          &lt 7 DOT           &lt 4 SLASH      &kp BSLH
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RCTRL 0  &eisu_to_l0    &kana_to_l1    &lt_qs_on 3 BACKSPACE  &lt_qs_on 2 ENTER  &mt RIGHT_ALT LEFT  &mt RCTRL RIGHT  &mt RIGHT_SHIFT LANG1
+                         &allow_end    &allow_pagedown              &allow_home       &allow_pageup  &allow_pageup  &allow_home            &allow_pagedown    &allow_end
             >;
         };
 
@@ -310,11 +349,11 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp TILDE  &kp F9  &kp F10  &kp F11  &kp F12               &kp F19          &kp PERCENT     &kp N7  &kp N8  &kp N9  &kp PLUS      &kp MINUS
-&trans     &kp F5  &kp F6   &kp F7   &kp F8                &kp LG(V)        &kp PERIOD      &kp N4  &kp N5  &kp N6  &kp N0        &kp EQUAL
-&trans     &kp F1  &kp F2   &kp F3   &kp F4                &kp PRINTSCREEN  &kp LANGUAGE_2  &kp N1  &kp N2  &kp N3  &kp ASTERISK  &kp SLASH
-&trans     &trans  &trans   &trans   &mt RCTRL LANGUAGE_2  &trans           &trans          &trans  &trans  &trans  &trans        &trans
-                   &trans   &trans   &trans                &trans           &trans          &trans  &trans  &trans
+&kp TILDE  &kp F9  &kp F10  &kp F11  &kp F12      &kp F19          &kp PERCENT     &kp N7  &kp N8  &kp N9  &kp PLUS      &kp MINUS
+&trans     &kp F5  &kp F6   &kp F7   &kp F8       &kp LG(V)        &kp PERIOD      &kp N4  &kp N5  &kp N6  &kp N0        &kp EQUAL
+&trans     &kp F1  &kp F2   &kp F3   &kp F4       &kp PRINTSCREEN  &kp LANGUAGE_2  &kp N1  &kp N2  &kp N3  &kp ASTERISK  &kp SLASH
+&trans     &trans  &trans   &trans   &eisu_to_l0  &trans           &trans          &trans  &trans  &trans  &trans        &trans
+                   &trans   &trans   &trans       &trans           &trans          &trans  &trans  &trans
             >;
         };
 
